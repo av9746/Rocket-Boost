@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9053576710410497814}
   - component: {fileID: 6898253239614862685}
   m_Layer: 0
-  m_Name: ' Starboard Booster (1)'
+  m_Name: ' Starboard Booster Right'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46119319988206738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.66, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.3, y: 1, z: 0.5}
+  m_LocalPosition: {x: -0.753, y: 0.286, z: 0}
+  m_LocalScale: {x: 0.5, y: 1.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 7908754510283859066}
   m_RootOrder: 3
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6157a0836364e40259af1ffe7657517d, type: 2}
+  - {fileID: 2100000, guid: c4296377c1bf4498b89f3f471a590e3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,9 +208,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2552293350342607237}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.28, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.5, z: 0.7}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7908754510283859066}
   m_RootOrder: 0
@@ -319,12 +319,12 @@ Rigidbody:
   m_GameObject: {fileID: 2662986642567281277}
   serializedVersion: 2
   m_Mass: 0.1
-  m_Drag: 0
+  m_Drag: 0.3
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!82 &8895751912318723719
 AudioSource:
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 5378095909136219662}
   - component: {fileID: 5779861893366741073}
   m_Layer: 0
-  m_Name: ' Starboard Booster'
+  m_Name: ' Starboard Booster Left'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,8 +461,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8270205780521732715}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.65, y: 0.03, z: -0}
-  m_LocalScale: {x: 0.3, y: 1, z: 0.5}
+  m_LocalPosition: {x: 0.746, y: 0.286, z: 0}
+  m_LocalScale: {x: 0.5, y: 1.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 7908754510283859066}
   m_RootOrder: 2
@@ -492,7 +492,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6157a0836364e40259af1ffe7657517d, type: 2}
+  - {fileID: 2100000, guid: c4296377c1bf4498b89f3f471a590e3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

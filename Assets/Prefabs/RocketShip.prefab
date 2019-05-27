@@ -240,7 +240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0cbdaf2464374417a89fd13621a641d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,6 +436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rcsTHrust: 200
   mainTHrust: 50
+  mainEngine: {fileID: 8300000, guid: 834eb69b169784f4ca0bf0d02cae5be5, type: 3}
+  levelCompleted: {fileID: 8300000, guid: c83f1b105f36241219b02865e87f9c5a, type: 3}
+  explosion: {fileID: 8300000, guid: f83b15c6162bf4be58e2c47e70cd2b48, type: 3}
 --- !u!1 &8270205780521732715
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,28 +3,33 @@ using UnityEngine.SceneManagement;
 
 
 public class Rocket : MonoBehaviour {
+    
     private Rigidbody rigidBody;
-    private AudioSource audioSource;
-
     [SerializeField]private float rcsTHrust = 100;
     [SerializeField]private float mainTHrust = 100;
+    
+    //Sound
+    private AudioSource audioSource;
     [SerializeField]private AudioClip mainEngine;
-    [SerializeField]private AudioClip levelCompleted;
+    [SerializeField]private AudioClip success;
     [SerializeField]private AudioClip explosion;
     
+    //Particles
+    [SerializeField] private ParticleSystem successParticles;
+    [SerializeField] private ParticleSystem mainEngineParticles;
+    [SerializeField] private ParticleSystem explosionParticles;
+    
+    
 
-    enum State {
-        Alive,
-        Dying,
-        Transcending
-    }
+    
+    
+    enum State {Alive, Dying, Transcending}
     private State state = State.Alive;
     
     // Start is called before the first frame update
     void Start() {
         rigidBody = gameObject.GetComponent<Rigidbody>();
         audioSource = gameObject.GetComponent<AudioSource>();
-
     }
 
     
@@ -57,7 +62,8 @@ public class Rocket : MonoBehaviour {
 
     private void StartSuccessSequence() {
         state = State.Transcending;
-        audioSource.PlayOneShot(levelCompleted);
+        audioSource.PlayOneShot(success);
+        successParticles.Play();
         Invoke("LoadNextLevel", 1f);
     }
 
@@ -65,6 +71,7 @@ public class Rocket : MonoBehaviour {
         state = State.Dying;
         audioSource.Stop();
         audioSource.PlayOneShot(explosion);
+        explosionParticles.Play();
         Invoke("LoadFirstLevel", 1f);
     }
 
@@ -83,6 +90,7 @@ public class Rocket : MonoBehaviour {
         }
         else {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
@@ -91,6 +99,7 @@ public class Rocket : MonoBehaviour {
         if (!audioSource.isPlaying) { // so it doesn't layer
             audioSource.PlayOneShot(mainEngine);
         }
+        mainEngineParticles.Play();
     }
 
     private void RespondToRotateInput() {

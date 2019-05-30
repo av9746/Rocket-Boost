@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 public class Rocket : MonoBehaviour {
     
     private Rigidbody rigidBody;
-    [SerializeField]private float rcsTHrust = 100;
-    [SerializeField]private float mainTHrust = 100;
+    [SerializeField]private float rcsTHrust = 100f;
+    [SerializeField]private float mainTHrust = 100f;
+    [SerializeField]private float levelLoad = 1f;
     
     //Sound
     private AudioSource audioSource;
@@ -64,7 +65,7 @@ public class Rocket : MonoBehaviour {
         state = State.Transcending;
         audioSource.PlayOneShot(success);
         successParticles.Play();
-        Invoke("LoadNextLevel", 1f);
+        Invoke("LoadNextLevel", levelLoad);
     }
 
     private void StartDeathSequence() {
@@ -72,7 +73,7 @@ public class Rocket : MonoBehaviour {
         audioSource.Stop();
         audioSource.PlayOneShot(explosion);
         explosionParticles.Play();
-        Invoke("LoadFirstLevel", 1f);
+        Invoke("LoadFirstLevel", levelLoad);
     }
 
 

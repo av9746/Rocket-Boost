@@ -23,7 +23,10 @@ public class Oscillator : MonoBehaviour {
         offset = movementVector3 * movementFactor;
         transform.position = startingPos + offset;
 
-        // todo protect dividing with zero
+        // protect dividing with zero
+        if (period <= Mathf.Epsilon || period == null) {
+            period = 2;
+        }
         float cycles = Time.time / period; // continuasly grow in 10s t5 cycles happened
 
         const float tau = Mathf.PI * 2; //we want whole cycle which is 2PI

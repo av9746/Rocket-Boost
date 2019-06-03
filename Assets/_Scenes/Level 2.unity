@@ -592,9 +592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121a6a5a9af4d4ca098097c52fa1c574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector3: {x: 0, y: 0, z: -1}
+  movementVector3: {x: 0, y: 0, z: -20}
   movementFactor: 1
-  period: 2
+  period: 4
 --- !u!1 &726850950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1265,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4d3bbead2fb45fe96a07aa71d54942, type: 3}
+--- !u!4 &1605241692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7908754510283859066, guid: ab4d3bbead2fb45fe96a07aa71d54942,
+    type: 3}
+  m_PrefabInstance: {fileID: 1605241691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644532051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,5 +2477,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1072536955, guid: 564d9067af9e0487b95d5a41feb9edbd, type: 3}
+      propertyPath: rocketTransform
+      value: 
+      objectReference: {fileID: 1605241692}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 564d9067af9e0487b95d5a41feb9edbd, type: 3}

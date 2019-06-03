@@ -73,7 +73,10 @@ public class Rocket : MonoBehaviour {
         audioSource.Stop();
         audioSource.PlayOneShot(explosion);
         explosionParticles.Play();
-        Invoke("LoadFirstLevel", levelLoad);
+        var currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene); ///for testing levels
+        //
+        //Invoke("LoadFirstLevel", levelLoad);
     }
 
 

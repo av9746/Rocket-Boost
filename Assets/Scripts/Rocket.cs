@@ -2,51 +2,79 @@
 using UnityEngine.SceneManagement;
 
 
-public class Rocket : MonoBehaviour {
-    
+public class Rocket : MonoBehaviour
+{
+
     private Rigidbody rigidBody;
-    [SerializeField]private float rcsTHrust = 100f;
-    [SerializeField]private float mainTHrust = 100f;
-    [SerializeField]private float levelLoad = 1f;
-    
+    [SerializeField] private float rcsTHrust = 100f;
+    [SerializeField] private float mainTHrust = 100f;
+    [SerializeField] private float levelLoad = 1f;
+
     //Sound
     private AudioSource audioSource;
-    [SerializeField]private AudioClip mainEngine;
-    [SerializeField]private AudioClip success;
-    [SerializeField]private AudioClip explosion;
-    
+    [SerializeField] private AudioClip mainEngine;
+    [SerializeField] private AudioClip success;
+    [SerializeField] private AudioClip explosion;
+
     //Particles
     [SerializeField] private ParticleSystem successParticles;
     [SerializeField] private ParticleSystem mainEngineParticles;
     [SerializeField] private ParticleSystem explosionParticles;
-    
-    
 
-    
-    
-    enum State {Alive, Dying, Transcending}
+    [SerializeField] private bool collisionsDisabled = false;
+
+
+
+    enum State
+    {
+        Alive,
+        Dying,
+        Transcending
+    }
+
     private State state = State.Alive;
-    
+
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         rigidBody = gameObject.GetComponent<Rigidbody>();
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
-    
+
     // Update is called once per frame
     void Update()
     {
-        if (state == State.Alive) {
+        if (state == State.Alive)
+        {
             RespondToThrustInput();
             RespondToRotateInput();
+        }
+
+        if (Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
         }
         
     }
 
+    private void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            StartSuccessSequence();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsDisabled = !collisionsDisabled; //toggle
+        }
+    }
+
+
     private void OnCollisionEnter(Collision other) {
 
-        if (state != State.Alive) {return;} //like a guard statement---ignore collisions when dead
+        if (state != State.Alive || collisionsDisabled) {return;} //like a guard statement---ignore collisions when dead
 
         switch (other.gameObject.tag) {
             case "Friendly":

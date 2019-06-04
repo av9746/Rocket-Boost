@@ -6,6 +6,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Camera.cs" t="Include" />
+          <e p="DebugManager.cs" t="Include" />
           <e p="Oscillator.cs" t="Include" />
           <e p="Rocket.cs" t="Include" />
         </e>

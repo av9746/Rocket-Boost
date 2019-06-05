@@ -102,14 +102,19 @@ public class Rocket : MonoBehaviour
         audioSource.PlayOneShot(explosion);
         explosionParticles.Play();
         var currentScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentScene); ///for testing levels
-        //
-        //Invoke("LoadFirstLevel", levelLoad);
+        Invoke("LoadFirstLevel", levelLoad);
     }
 
 
-    private void LoadNextLevel() {
-        SceneManager.LoadScene(1);
+    private void LoadNextLevel()
+    {
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = 0;
+        if (buildIndex <= 3)
+        {
+            nextIndex = buildIndex + 1;
+        }
+        SceneManager.LoadScene(nextIndex);
     }
 
     private void LoadFirstLevel() {
